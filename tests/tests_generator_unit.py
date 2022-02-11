@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+'''
+Ident icon generator. Unit tests.
+'''
 import unittest
 from random import choice
 from sys import path
