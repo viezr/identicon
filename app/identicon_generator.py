@@ -27,6 +27,9 @@ def create_image(value = None, size = None) -> bytes:
     return img_bytes_out
 
 def _parse_input(value, size) -> tuple:
+    '''
+    Check input values.
+    '''
     value = "abc" if not isinstance(value, str) else value
     if isinstance(size, str) and size.isdecimal():
         size = int(size)
@@ -63,6 +66,9 @@ def _create_table(value: str) -> list:
     return table
 
 def _hash_func(value: str) -> str:
+    '''
+    Return binary string from hash of value string.
+    '''
     hash_value = hashlib.md5(value)
     int_value = int.from_bytes(hash_value.digest(), "big")
     bin_str_value = bin(int_value)
